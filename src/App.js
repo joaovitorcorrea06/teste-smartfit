@@ -3,6 +3,7 @@ import Form from './components/Form';
 import Header from './components/Header';
 import Label from './components/Label';
 import Cards from './components/Cards';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -37,6 +38,7 @@ function App() {
       />
       <Label />
       <Cards data={filteredData.length > 0 ? filteredData : data.locations} />
+      <Footer />
 
     </div>
   );

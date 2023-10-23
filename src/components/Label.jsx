@@ -17,7 +17,7 @@ const Label = () => {
   return (
     <div className='w-[65%] mx-auto bg-[#f5f5f5] rounded mb-20 flex justify-between p-6'>
       <div className='w-[22%] text-center'>
-        <p className='font-bold text-xl' >Máscara</p>
+        <p className='font-bold text-xl mb-4' >Máscara</p>
         <div className='flex items-center justify-between px-10 gap-4'>
           <div className='flex flex-col items-center'>
             <img src={RequiredMask} alt='Required Mask' className='w-24' />
@@ -30,7 +30,7 @@ const Label = () => {
         </div>
       </div>
       <div className='w-[22%] text-center'>
-        <p className='font-bold text-xl' >Toalha</p>
+        <p className='font-bold text-xl mb-4' >Toalha</p>
         <div className='flex items-center justify-between px-10 gap-4'>
           <div className='flex flex-col items-center'>
             <img src={RequiredTowel} alt='Required Mask' className='w-24' />
@@ -43,7 +43,7 @@ const Label = () => {
         </div>
       </div>
       <div className='w-[22%] text-center'>
-        <p className='font-bold text-xl' >Bebedouro</p>
+        <p className='font-bold text-xl mb-4' >Bebedouro</p>
         <div className='flex items-center justify-between px-10 gap-4'>
           <div className='flex flex-col items-center'>
             <img src={ParcialFountain} alt='Required Mask' className='w-24' />
@@ -56,7 +56,7 @@ const Label = () => {
         </div>
       </div>
       <div className='w-[30%] text-center'>
-        <p className='font-bold text-xl' >Vestiário</p>
+        <p className='font-bold text-xl mb-4' >Vestiário</p>
         <div className='flex items-center justify-between px-10 gap-4'>
           <div className='flex flex-col items-center'>
             <img src={RequiredLockerRoom} alt='Required Mask' className='w-24' />

@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form'
 
 const Form = ({ data, filteredData, setFilteredData }) => {
 
-  const { register, handleSubmit } = useForm()
+  const { register, handleSubmit, setValue } = useForm()
 
   function isTimeInRange(time, startTime, endTime) {
     // Extract the start and end times from the format "06h às 22h"
@@ -46,16 +46,18 @@ const Form = ({ data, filteredData, setFilteredData }) => {
 
 
   function onSubmit(event) {
-    console.log(data)
-    console.log(event.periodo)
-    let result
+    let newData = data
+    if (event.unidades_fechadas === false) {
+      newData = data.filter((item) => item.opened === true)
+    }
 
-    if (event.periodo === 'manha') result = filterByTime(data, "06:00", "12:00");
-    if (event.periodo === 'tarde') result = filterByTime(data, "12:01", "18:00");
-    if (event.periodo === 'noite') result = filterByTime(data, "18:01", "23:00");
+    let result = []
 
-    console.log(result.length)
-    console.log(result)
+    if (event.periodo === null) result = newData
+    if (event.periodo === 'manha') result = filterByTime(newData, "06:00", "12:00");
+    if (event.periodo === 'tarde') result = filterByTime(newData, "12:01", "18:00");
+    if (event.periodo === 'noite') result = filterByTime(newData, "18:01", "23:00");
+
     setFilteredData(result)
 
   }
@@ -98,12 +100,12 @@ const Form = ({ data, filteredData, setFilteredData }) => {
           <input type="checkbox" {...register("unidades_fechadas")} className='w-5 h-5' />
           <p className='text-2xl'>Exibir unidades fechadas</p>
         </div>
-        <p className='text-2xl'>Resultados encontrados: <span className='font-extrabold'>{filteredData.length > 0 ? filteredData.length : 0}</span></p>
+        <p className='text-2xl'>Resultados encontrados: <span className='font-extrabold'>{filteredData.length > 0 ? filteredData?.length : data?.length}</span></p>
       </div>
 
       <div className='flex justify-center items-center gap-4 mt-10'>
         <button className='bg-new-yellow text-black font-bold py-4 min-w-[30%] rounded' type='submit'>ENCONTRAR UNIDADE</button>
-        <button className='border-2 border-new-light-grey  text-black font-bold py-4 min-w-[30%] rounded' type='reset'>LIMPAR</button>
+        <button className='border-2 border-new-light-grey  text-black font-bold py-4 min-w-[30%] rounded' type='reset' onClick={() => setValue('periodo', null)}>LIMPAR</button>
       </div>
 
     </form>
