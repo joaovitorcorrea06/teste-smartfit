@@ -63,12 +63,12 @@ const Form = ({ data, filteredData, setFilteredData }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className='w-[65%] mx-auto border-2 rounded border-[#ededed] text-new-light-grey p-6 mb-20'>
+    <form onSubmit={handleSubmit(onSubmit)} className='w-[90%] md:w-[65%] mx-auto border-2 rounded border-[#ededed] text-new-light-grey p-6 mb-20'>
       <div className='flex gap-4'>
         <img src={Clock} alt='Relógio' className='w-10' />
         <p className='text-2xl '>Horário</p>
       </div>
-      <p className=' text-4xl mt-8'>Qual período quer treinar?</p>
+      <p className=' text-2xl md:text-4xl mt-8'>Qual período quer treinar?</p>
       <div className='h-1 bg-[#ededed] my-4'></div>
       <div className='w-full flex items-center justify-between'>
         <div className='flex gap-3 items-center'>
@@ -95,17 +95,17 @@ const Form = ({ data, filteredData, setFilteredData }) => {
       </div>
       <div className='h-1 bg-[#ededed] my-4'></div>
 
-      <div className='w-full flex items-center justify-between mt-16'>
+      <div className='w-full flex items-center justify-between mt-16 flex-wrap'>
         <div className='flex gap-3 items-center'>
           <input type="checkbox" {...register("unidades_fechadas")} className='w-5 h-5' />
           <p className='text-2xl'>Exibir unidades fechadas</p>
         </div>
-        <p className='text-2xl'>Resultados encontrados: <span className='font-extrabold'>{filteredData.length > 0 ? filteredData?.length : data?.length}</span></p>
+        <p className='text-xl mx-auto mt-6 md:mx-0 md:text-2xl md:mt-0 '>Resultados encontrados: <span className='font-extrabold'>{filteredData.length > 0 ? filteredData?.length : data?.length}</span></p>
       </div>
 
-      <div className='flex justify-center items-center gap-4 mt-10'>
-        <button className='bg-new-yellow text-black font-bold py-4 min-w-[30%] rounded' type='submit'>ENCONTRAR UNIDADE</button>
-        <button className='border-2 border-new-light-grey  text-black font-bold py-4 min-w-[30%] rounded' type='reset' onClick={() => setValue('periodo', null)}>LIMPAR</button>
+      <div className='flex justify-center items-center gap-4 mt-10 flex-wrap'>
+        <button className='bg-new-yellow text-black font-bold py-4 min-w-[100%] md:min-w-[30%] rounded' type='submit'>ENCONTRAR UNIDADE</button>
+        <button className='border-2 border-new-light-grey  text-black font-bold py-4 min-w-[100%] md:min-w-[30%] rounded' type='reset' onClick={() => setValue('periodo', null)}>LIMPAR</button>
       </div>
 
     </form>
