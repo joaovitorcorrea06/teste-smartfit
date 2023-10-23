@@ -7,7 +7,7 @@ const Header = () => {
       <div className='h-[126px] bg-black w-full p-10 flex items-center justify-center'>
         <img src={Logo} alt='' className='h-[150%]' />
       </div>
-      <div className='w-[70%] mt-24'>
+      <div className='w-[65%] mt-24'>
         <h1 className='text-new-dark-grey font-bold text-5xl'>REABERTURA</h1>
         <h1 className='text-new-dark-grey font-bold text-5xl'>SMART FIT</h1>
         <div className='h-2 bg-new-dark-grey w-[10%] my-10'></div>
